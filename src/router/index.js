@@ -5,6 +5,8 @@ import EventLayout from '../views/event/Layout.vue'
 import EventRegister from '../views/event/Register.vue'
 import EventEdit from '../views/event/Edit.vue'
 import About from '../views/About.vue'
+import NotFound from "@/views/NotFound.vue";
+import NetworkError from "@/views/NetworkError.vue";
 
 const routes = [
   {
@@ -46,6 +48,22 @@ const routes = [
     path: '/about',
     name: 'About',
     component: About
+  },
+  {
+    path: '/:catch(.*)', // Match all routes that do not match an existing route
+    name: 'NotFound',
+    component: NotFound
+  },
+  {
+    path: '/404/:resource', // We will use /404/event
+    name: '404Resource',
+    component: NotFound,
+    props: true
+  },
+  {
+    path: '/network-error', // We will see NetworkError page
+    name: 'NetworkError',
+    component: NetworkError
   }
 ]
 
