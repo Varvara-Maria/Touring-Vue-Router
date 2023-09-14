@@ -4,7 +4,7 @@
       {{ GStore.flashMessage }}
     </div>
     <div id="nav">
-      <router-link :to="{ name: 'EventList' }">Events</router-link> |
+      <router-link :to="{ name: 'Test' }">Events</router-link> |
       <router-link :to="{ name: 'About' }">About</router-link>
     </div>
     <router-view />

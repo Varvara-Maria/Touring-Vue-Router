@@ -39,6 +39,12 @@ const routes = [
     ]
   },
   {
+    path: '/test',
+    name: 'Test',
+    component: EventList,
+    props: route => ({ page: parseInt(route.query.page) || 1 })
+  },
+  {
     path: '/event/:afterEvent(.*)',
     redirect: to => {
       return { path: '/events/' + to.params.afterEvent }
